@@ -1,2 +1,6 @@
-package Entity;public enum Status {
+package Entity;
+
+public enum Status {
+    UNRESERVED,
+    RESERVED
 }

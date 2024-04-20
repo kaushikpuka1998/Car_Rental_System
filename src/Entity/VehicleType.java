@@ -1,2 +1,6 @@
-package Entity;public class VehicleType {
+package Entity;
+
+public enum VehicleType {
+    CAR,
+    MOTORCYCLE
 }
