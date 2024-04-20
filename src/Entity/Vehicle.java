@@ -8,18 +8,23 @@ public class Vehicle {
     private String occupancy;
     private String VehicleColor;
 
+    private int dailyRentalCost;
+    private int hourlyRentalCost;
+
     private Status status;
 
     public Vehicle() {
     }
 
-    public Vehicle(String VehicleID, VehicleType VehicleType, String VehicleBrand, String VehicleModel, String occupancy, String VehicleColor, Status status) {
+    public Vehicle(String VehicleID, VehicleType VehicleType, String VehicleBrand, String VehicleModel, String occupancy, String VehicleColor, int dailyRentalCost, int hourlyRentalCost, Status status) {
         this.VehicleID = VehicleID;
         this.VehicleType = VehicleType;
         this.VehicleBrand = VehicleBrand;
         this.VehicleModel = VehicleModel;
         this.occupancy = occupancy;
         this.VehicleColor = VehicleColor;
+        this.dailyRentalCost = dailyRentalCost;
+        this.hourlyRentalCost = hourlyRentalCost;
         this.status = status;
     }
 
@@ -71,6 +76,22 @@ public class Vehicle {
         VehicleColor = vehicleColor;
     }
 
+    public int getDailyRentalCost() {
+        return dailyRentalCost;
+    }
+
+    public void setDailyRentalCost(int dailyRentalCost) {
+        this.dailyRentalCost = dailyRentalCost;
+    }
+
+    public int getHourlyRentalCost() {
+        return hourlyRentalCost;
+    }
+
+    public void setHourlyRentalCost(int hourlyRentalCost) {
+        this.hourlyRentalCost = hourlyRentalCost;
+    }
+
     public Status getStatus() {
         return status;
     }
@@ -78,6 +99,4 @@ public class Vehicle {
     public void setStatus(Status status) {
         this.status = status;
     }
-
-
 }
