@@ -8,6 +8,7 @@ import Entity.Store;
 import Entity.User;
 import Entity.Vehicle;
 import Entity.VehicleInventoryManagement;
+import Entity.VehicleStatus;
 import Entity.VehicleType;
 
 import java.util.ArrayList;
@@ -34,15 +35,20 @@ public class Main {
         bill.payBill(reservation, PaymentType.UPI);
 
         store.completeReservation(reservation, reservation.getReservationId());
+        printDetails(store, reservation);
         bill.payBill(reservation, PaymentType.UPI);
         store.completeReservation(reservation, reservation.getReservationId());
 
 
+    }
 
-
-
-
-
+    private static void printDetails(Store store, Reservation reservation) {
+        System.out.println("Vehicle ID: " + reservation.getVehicle().getVehicleID());
+        System.out.println("Vehicle Type: " + reservation.getVehicle().getVehicleType());
+        System.out.println("Vehicle Status: " + reservation.getVehicle().getStatus());
+        System.out.println("Store ID: " + store.getStoreID());
+        System.out.println("Store Name: " + store.getStoreName());
+        System.out.println("Store Location: " + store.getLocation().getAddress() + ", " + store.getLocation().getCity() + ", " + store.getLocation().getState() + ", " + store.getLocation().getZipCode());
     }
 
     public static List<User> addUsers() {
@@ -66,8 +72,8 @@ public class Main {
 
     public static List<Vehicle> addVehicles() {
         List<Vehicle> vehicles = new ArrayList<>();
-        vehicles.add(new Vehicle("V1", VehicleType.CAR, "TOYOTA", "Sedan", "Black", "Green", 105, 40, Status.UNRESERVED));
-        vehicles.add(new Vehicle("V2", VehicleType.CAR, "JEEP", "Sedan", "Black", "Green", 95, 50, Status.UNRESERVED));
+        vehicles.add(new Vehicle("V1", VehicleType.CAR, "TOYOTA", "Sedan", "Black", "Green", 105, 40, VehicleStatus.UNRESERVED));
+        vehicles.add(new Vehicle("V2", VehicleType.CAR, "JEEP", "Sedan", "Black", "Green", 95, 50, VehicleStatus.UNRESERVED));
         return vehicles;
     }
 }

@@ -11,12 +11,12 @@ public class Vehicle {
     private int dailyRentalCost;
     private int hourlyRentalCost;
 
-    private Status status;
+    private VehicleStatus status;
 
     public Vehicle() {
     }
 
-    public Vehicle(String VehicleID, VehicleType VehicleType, String VehicleBrand, String VehicleModel, String occupancy, String VehicleColor, int dailyRentalCost, int hourlyRentalCost, Status status) {
+    public Vehicle(String VehicleID, VehicleType VehicleType, String VehicleBrand, String VehicleModel, String occupancy, String VehicleColor, int dailyRentalCost, int hourlyRentalCost, VehicleStatus status) {
         this.VehicleID = VehicleID;
         this.VehicleType = VehicleType;
         this.VehicleBrand = VehicleBrand;
@@ -92,11 +92,11 @@ public class Vehicle {
         this.hourlyRentalCost = hourlyRentalCost;
     }
 
-    public Status getStatus() {
+    public VehicleStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(VehicleStatus status) {
         this.status = status;
     }
 }

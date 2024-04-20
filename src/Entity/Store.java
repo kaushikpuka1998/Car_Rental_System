@@ -77,6 +77,7 @@ public class Store {
         for(Reservation res: reservations){
             if(res.getReservationId().equals(reservationId)){
                 res.setStatus(ReservationStatus.CONFIRMED);
+                res.getVehicle().setStatus(VehicleStatus.RESERVED);
                 return res;
             }
         }
