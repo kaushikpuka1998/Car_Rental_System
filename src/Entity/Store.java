@@ -10,6 +10,9 @@ public class Store {
     private VehicleInventoryManagement vehicleInventoryManagement;
     private List<Reservation> reservations = new ArrayList<>();
 
+    public Store() {
+    }
+
     public Store(String storeID, String storeName, Location location, VehicleInventoryManagement vehicleInventoryManagement) {
         StoreID = storeID;
         StoreName = storeName;
@@ -45,8 +48,8 @@ public class Store {
         return vehicleInventoryManagement;
     }
 
-    public void setVehicleInventoryManagement(VehicleInventoryManagement vehicleInventoryManagement) {
-        this.vehicleInventoryManagement = vehicleInventoryManagement;
+    public void setVehicle(List<Vehicle> vehicles) {
+        this.vehicleInventoryManagement = new VehicleInventoryManagement(vehicles);
     }
 
     public List<Reservation> getReservations() {
@@ -61,11 +64,22 @@ public class Store {
         return this.vehicleInventoryManagement.vehicles;
     }
 
-    Reservation createReservation(Vehicle vehicle, User user){
+    public Reservation createReservation(Vehicle vehicle, User user){
         Reservation reservation = new Reservation();
+        reservation.setReservationId(String.valueOf((int)(Math.random()*1000000)));
         reservation.setVehicle(vehicle);
         reservation.setUser(user);
         reservations.add(reservation);
+        return reservation;
+    }
+
+    public Reservation completeReservation(Reservation reservation , String reservationId){
+        for(Reservation res: reservations){
+            if(res.getReservationId().equals(reservationId)){
+                res.setStatus(ReservationStatus.CONFIRMED);
+                return res;
+            }
+        }
         return reservation;
     }
 

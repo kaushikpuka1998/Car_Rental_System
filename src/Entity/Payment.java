@@ -14,7 +14,7 @@ public class Payment {
     }
 
 
-    private void payBill(Bill bill,PaymentType paymentType) {
+    public void payBill(Bill bill,PaymentType paymentType) {
         this.bill = bill;
         this.transactionID = generateTransactionID();
         this.status = PaymentStatus.SUCCESS;

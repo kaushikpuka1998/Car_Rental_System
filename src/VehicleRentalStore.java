@@ -15,7 +15,7 @@ public class VehicleRentalStore {
 
     public Store getStore(Location location){
         for(Store store: stores){
-            if(store.getLocation().equals(location)){
+            if(store.getLocation().getZipCode().equals(location.getZipCode())){
                 return store;
             }
         }

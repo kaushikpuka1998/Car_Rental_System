@@ -10,8 +10,14 @@ public class VehicleInventoryManagement {
         this.vehicles = vehicles;
     }
 
+
+
     public List<Vehicle> getVehicles() {
         return vehicles;
+    }
+
+    public void setVehicles(List<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 
     public Vehicle addVehicle(Vehicle vehicle) {
